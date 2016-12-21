@@ -14,6 +14,10 @@ RUN \
   && apt-file update \
   && dh-make-perl locate Net::SMTP::SSL
 
+# Application Installer Setup
+RUN \
+  curl -sL http://www.acmailer.jp/cgi/install/makeinstall2.cgi -O /var/www/html/install.cgi
+
 
 WORKDIR /var/www/html
 
