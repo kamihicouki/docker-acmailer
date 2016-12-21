@@ -16,7 +16,7 @@ RUN \
 
 # Application Installer Setup
 RUN \
-  curl -sL http://www.acmailer.jp/cgi/install/makeinstall2.cgi -O /var/www/html/install.cgi
+  curl -sL http://www.acmailer.jp/cgi/install/makeinstall2.cgi -o /var/www/html/install.cgi
 
 
 WORKDIR /var/www/html
