@@ -13,9 +13,8 @@ WORKDIR /var/www/html
 # Download CGI installer
 RUN \
   VERSION=$(curl -sL https://www.acmailer.jp/download/ | grep app_name | grep -o 'acmailer[0-9]\.[0-9]\.[0-9]') \
-  && curl  -sL -G --data-urlencode app_name=${VERSION} --data-urlencode 'perl_path=#!/usr/bin/perl' "http://www.acmailer.jp/cgi/install/makeinstall2.cgi" -o ./install.cgi \
-  && chmod +x ./install.cgi
-
+  && curl  -sL -G --data-urlencode app_name=${VERSION} --data-urlencode 'perl_path=#!/usr/bin/perl' "http://www.acmailer.jp/cgi/install/makeinstall2.cgi" -o ./install.cgi
+  
 # Adjust directory permission
 RUN \
   chown -R www-data:www-data /var/www/html
